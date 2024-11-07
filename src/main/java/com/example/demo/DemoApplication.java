@@ -40,9 +40,9 @@ class RestApiDemoController {
     }
 
     @GetMapping("/{id}")
-    Optional<Coffee> getCoffeeById(@PathVariable int id) {
+    Optional<Coffee> getCoffeeById(@PathVariable String id) {
         for (Coffee c: coffees) {
-            if (c.getId().equals((id))) {
+            if (c.getId().equals(id)) {
                 return Optional.of(c);
             }
         }
